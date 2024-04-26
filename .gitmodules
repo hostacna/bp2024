@@ -1,0 +1,6 @@
+[submodule "ludobots"]
+	path = ludobots
+	url = ../ludobots.git
+; [submodule "ctrl"]
+; 	path = ctrl
+; 	url = ../ctrl.git
