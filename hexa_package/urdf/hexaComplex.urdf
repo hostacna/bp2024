@@ -1,0 +1,546 @@
+<robot name = "robot">
+    <link name="Torso">
+        <inertial>
+            <origin xyz="0 0 1" rpy="0 0 0"/>
+            <mass value="1" />
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 1" rpy="0 0 0"/>
+            <geometry>
+                <box size="1 1 0.5" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 1" rpy="0 0 0"/>
+            <geometry>
+                <box size="1 1 0.5" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="FrontLeftCoxa">
+        <inertial>
+            <origin xyz="0 -0.25 0" rpy="0 0 0"/>
+            <mass value="1" />
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin xyz="0 -0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 -0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="Torso_FrontLeftCoxa" type="revolute">
+       <parent link="Torso"/>
+       <child  link="FrontLeftCoxa"/>
+       <origin rpy="0 0 0" xyz="-0.5 -0.5 1" />
+       <axis xyz="0 0 1"/>
+       <limit effort="0.0" lower="-3.14159" upper="3.14159" velocity="0.0"/>
+    </joint>
+    <link name="FrontLeftFemur">
+        <inertial>
+            <origin xyz="0 -0.25 0" rpy="0 0 0"/>
+            <mass value="1" />
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin xyz="0 -0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 -0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="FrontLeftCoxa_FrontLeftFemur" type="revolute">
+       <parent link="FrontLeftCoxa"/>
+       <child  link="FrontLeftFemur"/>
+       <origin rpy="0 0 0" xyz="0 -0.5 0" />
+       <axis xyz="1 0 0"/>
+       <limit effort="0.0" lower="-3.14159" upper="3.14159" velocity="0.0"/>
+    </joint>
+    <link name="FrontLeftTibia">
+        <inertial>
+            <origin xyz="0 0 -0.5" rpy="0 0 0"/>
+            <mass value="1" />
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 -0.5" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.2 1" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 -0.5" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.2 1" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="FrontLeftFemur_FrontLeftTibia" type="revolute">
+       <parent link="FrontLeftFemur"/>
+       <child  link="FrontLeftTibia"/>
+       <origin rpy="0 0 0" xyz="0 -0.5 0" />
+       <axis xyz="1 0 0"/>
+       <limit effort="0.0" lower="-3.14159" upper="3.14159" velocity="0.0"/>
+    </joint>
+    <link name="MiddleLeftCoxa">
+        <inertial>
+            <origin xyz="0 -0.25 0" rpy="0 0 0"/>
+            <mass value="1" />
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin xyz="0 -0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 -0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="Torso_MiddleLeftCoxa" type="revolute">
+       <parent link="Torso"/>
+       <child  link="MiddleLeftCoxa"/>
+       <origin rpy="0 0 0" xyz="0.0 -0.5 1" />
+       <axis xyz="0 0 1"/>
+       <limit effort="0.0" lower="-3.14159" upper="3.14159" velocity="0.0"/>
+    </joint>
+    <link name="MiddleLeftFemur">
+        <inertial>
+            <origin xyz="0 -0.25 0" rpy="0 0 0"/>
+            <mass value="1" />
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin xyz="0 -0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 -0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="MiddleLeftCoxa_MiddleLeftFemur" type="revolute">
+       <parent link="MiddleLeftCoxa"/>
+       <child  link="MiddleLeftFemur"/>
+       <origin rpy="0 0 0" xyz="0 -0.5 0" />
+       <axis xyz="1 0 0"/>
+       <limit effort="0.0" lower="-3.14159" upper="3.14159" velocity="0.0"/>
+    </joint>
+    <link name="MiddleLeftTibia">
+        <inertial>
+            <origin xyz="0 0 -0.5" rpy="0 0 0"/>
+            <mass value="1" />
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 -0.5" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.2 1" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 -0.5" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.2 1" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="MiddleLeftFemur_MiddleLeftTibia" type="revolute">
+       <parent link="MiddleLeftFemur"/>
+       <child  link="MiddleLeftTibia"/>
+       <origin rpy="0 0 0" xyz="0 -0.5 0" />
+       <axis xyz="1 0 0"/>
+       <limit effort="0.0" lower="-3.14159" upper="3.14159" velocity="0.0"/>
+    </joint>
+    <link name="BackLeftCoxa">
+        <inertial>
+            <origin xyz="0 -0.25 0" rpy="0 0 0"/>
+            <mass value="1" />
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin xyz="0 -0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 -0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="Torso_BackLeftCoxa" type="revolute">
+       <parent link="Torso"/>
+       <child  link="BackLeftCoxa"/>
+       <origin rpy="0 0 0" xyz="0.5 -0.5 1" />
+       <axis xyz="0 0 1"/>
+       <limit effort="0.0" lower="-3.14159" upper="3.14159" velocity="0.0"/>
+    </joint>
+    <link name="BackLeftFemur">
+        <inertial>
+            <origin xyz="0 -0.25 0" rpy="0 0 0"/>
+            <mass value="1" />
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin xyz="0 -0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 -0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="BackLeftCoxa_BackLeftFemur" type="revolute">
+       <parent link="BackLeftCoxa"/>
+       <child  link="BackLeftFemur"/>
+       <origin rpy="0 0 0" xyz="0 -0.5 0" />
+       <axis xyz="1 0 0"/>
+       <limit effort="0.0" lower="-3.14159" upper="3.14159" velocity="0.0"/>
+    </joint>
+    <link name="BackLeftTibia">
+        <inertial>
+            <origin xyz="0 0 -0.5" rpy="0 0 0"/>
+            <mass value="1" />
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 -0.5" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.2 1" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 -0.5" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.2 1" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="BackLeftFemur_BackLeftTibia" type="revolute">
+       <parent link="BackLeftFemur"/>
+       <child  link="BackLeftTibia"/>
+       <origin rpy="0 0 0" xyz="0 -0.5 0" />
+       <axis xyz="1 0 0"/>
+       <limit effort="0.0" lower="-3.14159" upper="3.14159" velocity="0.0"/>
+    </joint>
+    <link name="FrontRightCoxa">
+        <inertial>
+            <origin xyz="0 0.25 0" rpy="0 0 0"/>
+            <mass value="1" />
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="Torso_FrontRightCoxa" type="revolute">
+       <parent link="Torso"/>
+       <child  link="FrontRightCoxa"/>
+       <origin rpy="0 0 0" xyz="-0.5 0.5 1" />
+       <axis xyz="0 0 1"/>
+       <limit effort="0.0" lower="-3.14159" upper="3.14159" velocity="0.0"/>
+    </joint>
+    <link name="FrontRightFemur">
+        <inertial>
+            <origin xyz="0 0.25 0" rpy="0 0 0"/>
+            <mass value="1" />
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="FrontRightCoxa_FrontRightFemur" type="revolute">
+       <parent link="FrontRightCoxa"/>
+       <child  link="FrontRightFemur"/>
+       <origin rpy="0 0 0" xyz="0 0.5 0" />
+       <axis xyz="1 0 0"/>
+       <limit effort="0.0" lower="-3.14159" upper="3.14159" velocity="0.0"/>
+    </joint>
+    <link name="FrontRightTibia">
+        <inertial>
+            <origin xyz="0 0 -0.5" rpy="0 0 0"/>
+            <mass value="1" />
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 -0.5" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.2 1" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 -0.5" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.2 1" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="FrontRightFemur_FrontRightTibia" type="revolute">
+       <parent link="FrontRightFemur"/>
+       <child  link="FrontRightTibia"/>
+       <origin rpy="0 0 0" xyz="0 0.5 0" />
+       <axis xyz="1 0 0"/>
+       <limit effort="0.0" lower="-3.14159" upper="3.14159" velocity="0.0"/>
+    </joint>
+    <link name="MiddleRightCoxa">
+        <inertial>
+            <origin xyz="0 0.25 0" rpy="0 0 0"/>
+            <mass value="1" />
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="Torso_MiddleRightCoxa" type="revolute">
+       <parent link="Torso"/>
+       <child  link="MiddleRightCoxa"/>
+       <origin rpy="0 0 0" xyz="0.0 0.5 1" />
+       <axis xyz="0 0 1"/>
+       <limit effort="0.0" lower="-3.14159" upper="3.14159" velocity="0.0"/>
+    </joint>
+    <link name="MiddleRightFemur">
+        <inertial>
+            <origin xyz="0 0.25 0" rpy="0 0 0"/>
+            <mass value="1" />
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="MiddleRightCoxa_MiddleRightFemur" type="revolute">
+       <parent link="MiddleRightCoxa"/>
+       <child  link="MiddleRightFemur"/>
+       <origin rpy="0 0 0" xyz="0 0.5 0" />
+       <axis xyz="1 0 0"/>
+       <limit effort="0.0" lower="-3.14159" upper="3.14159" velocity="0.0"/>
+    </joint>
+    <link name="MiddleRightTibia">
+        <inertial>
+            <origin xyz="0 0 -0.5" rpy="0 0 0"/>
+            <mass value="1" />
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 -0.5" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.2 1" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 -0.5" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.2 1" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="MiddleRightFemur_MiddleRightTibia" type="revolute">
+       <parent link="MiddleRightFemur"/>
+       <child  link="MiddleRightTibia"/>
+       <origin rpy="0 0 0" xyz="0 0.5 0" />
+       <axis xyz="1 0 0"/>
+       <limit effort="0.0" lower="-3.14159" upper="3.14159" velocity="0.0"/>
+    </joint>
+    <link name="BackRightCoxa">
+        <inertial>
+            <origin xyz="0 0.25 0" rpy="0 0 0"/>
+            <mass value="1" />
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="Torso_BackRightCoxa" type="revolute">
+       <parent link="Torso"/>
+       <child  link="BackRightCoxa"/>
+       <origin rpy="0 0 0" xyz="0.5 0.5 1" />
+       <axis xyz="0 0 1"/>
+       <limit effort="0.0" lower="-3.14159" upper="3.14159" velocity="0.0"/>
+    </joint>
+    <link name="BackRightFemur">
+        <inertial>
+            <origin xyz="0 0.25 0" rpy="0 0 0"/>
+            <mass value="1" />
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0.25 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.5 0.2" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="BackRightCoxa_BackRightFemur" type="revolute">
+       <parent link="BackRightCoxa"/>
+       <child  link="BackRightFemur"/>
+       <origin rpy="0 0 0" xyz="0 0.5 0" />
+       <axis xyz="1 0 0"/>
+       <limit effort="0.0" lower="-3.14159" upper="3.14159" velocity="0.0"/>
+    </joint>
+    <link name="BackRightTibia">
+        <inertial>
+            <origin xyz="0 0 -0.5" rpy="0 0 0"/>
+            <mass value="1" />
+            <inertia ixx="100" ixy="0" ixz="0" iyy="100" iyz="0" izz="100" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 -0.5" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.2 1" />
+            </geometry>
+            <material name="Cyan">
+                <color rgba="0 1.0 1.0 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 -0.5" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.2 0.2 1" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="BackRightFemur_BackRightTibia" type="revolute">
+       <parent link="BackRightFemur"/>
+       <child  link="BackRightTibia"/>
+       <origin rpy="0 0 0" xyz="0 0.5 0" />
+       <axis xyz="1 0 0"/>
+       <limit effort="0.0" lower="-3.14159" upper="3.14159" velocity="0.0"/>
+    </joint>
+</robot>

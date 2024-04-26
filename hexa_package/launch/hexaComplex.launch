@@ -1,0 +1,15 @@
+<launch>
+    <!-- Load URDF -->
+    <!--     <param name="robot_description" textfile="$(find my_custom_package)/urdf/my_robot.urdf" /> -->
+    <param name="robot_description" textfile="$(find hexa_package)/urdf/hexaComplex.urdf" />
+
+    <!-- Start robot state publisher -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+    <!-- Start your custom robot state publisher node -->
+    <node name="joint_state_publisher" pkg="hexa_package" type="$(find hexa_package)/src/joint_state_publisher.py" />
+    <node name="listener" pkg="hexa_package" type="$(find hexa_package)/src/listener.py" />
+
+    <!-- Start RViz -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d rviz/rviz_config.rviz" />
+</launch>

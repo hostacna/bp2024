@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>hexa_package</name>
+    <version>0.0.0</version>
+    <description>ROS and ROS 2 compatible package</description>
+    <maintainer email="you@example.com">Your Name</maintainer>
+    <license>MIT</license>
+
+    <!-- ROS 2 dependencies -->
+    <buildtool_depend>ament_cmake</buildtool_depend>
+    <depend>std_msgs</depend>
+    <depend>rosidl_default_generators</depend>
+
+    <!-- ROS dependencies -->
+    <exec_depend>roscpp</exec_depend>
+    <exec_depend>std_msgs</exec_depend>
+    <export>
+        <build_type>ament_cmake</build_type>
+    </export>
+</package>
