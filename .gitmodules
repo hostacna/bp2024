@@ -1,6 +1,6 @@
 [submodule "ludobots"]
 	path = ludobots
 	url =  https://github.com/hostacna/ludobots.git
-; [submodule "ctrl"]
-; 	path = ctrl
-; 	url = ../ctrl.git
+[submodule "ctrl"]
+	path = milo_test
+	url = https://github.com/hostacna/pyControlPhantomx.git
